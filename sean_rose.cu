@@ -1,3 +1,10 @@
+/**
+ * @author : Sean Rose (http://www.cs.fsu.edu/research/projects/rose_report.pdf)
+ * 
+ * Implementation of SPMM CUDA Kernels
+ *
+ */
+
 __global__ void GetNNZ(sparse_matrix A, sparse_matrix B, sparse_matrix C, int* workingSet)
 {
 	const int laneId = threadIdx.x;
@@ -64,7 +71,6 @@ __global__ void GetNNZ(sparse_matrix A, sparse_matrix B, sparse_matrix C, int* w
 		__syncthreads();
 	}
 }
-
 
 __global__ void GetVals(sparse_matrix A, sparse_matrix B, sparse_matrix C, int* indexTable)
 {

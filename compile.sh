@@ -1,0 +1,1 @@
+g++ -w -O3 main.cpp sparse_matrix.cpp
